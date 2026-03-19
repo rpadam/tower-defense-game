@@ -1,5 +1,6 @@
 import './styles.css';
 import { TowerDefenseGame } from './game.js';
+import { bootstrapGameShell } from './game/bootstrap.js';
 
 const canvas = document.querySelector('#game-canvas');
 if (!canvas) {
@@ -7,4 +8,4 @@ if (!canvas) {
 }
 
 const game = new TowerDefenseGame(canvas);
-game.start();
+bootstrapGameShell({ game, canvas });

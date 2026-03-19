@@ -1,0 +1,169 @@
+{
+  "project": {
+    "name": "tower-defense-game",
+    "root": "/Users/raphaeladam/development/tower-defense-game"
+  },
+  "model_policy_file": "orchestration/model-policy.json",
+  "tasks": [
+    {
+      "id": "UI-01",
+      "title": "Build the shell layout and title screen",
+      "prompt_file": ".agent-prompts/UI-01.txt",
+      "status": "pending",
+      "depends_on": [],
+      "can_run_parallel": true,
+      "preferred_tier": "medium",
+      "review_model": "high",
+      "allowed_paths": [
+        "index.html",
+        "src/styles.css",
+        "src/main.js",
+        "src/game/bootstrap.js",
+        "src/game/ui"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "DATA-01",
+      "title": "Modularize state and config data",
+      "prompt_file": ".agent-prompts/DATA-01.txt",
+      "status": "pending",
+      "depends_on": [],
+      "can_run_parallel": true,
+      "preferred_tier": "cheap",
+      "review_model": "medium",
+      "allowed_paths": [
+        "src/state.js",
+        "src/game/constants.js",
+        "src/game/state",
+        "src/game/data",
+        "src/game/utils"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "MAP-01",
+      "title": "Implement the battlefield and placement previews",
+      "prompt_file": ".agent-prompts/MAP-01.txt",
+      "status": "pending",
+      "depends_on": ["UI-01", "DATA-01"],
+      "can_run_parallel": false,
+      "preferred_tier": "medium",
+      "review_model": "high",
+      "allowed_paths": [
+        "src/game/bootstrap.js",
+        "src/game/constants.js",
+        "src/game/state/selectors.js",
+        "src/game/render",
+        "src/game/systems/buildSystem.js"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "COMBAT-01",
+      "title": "Implement waves and enemy movement",
+      "prompt_file": ".agent-prompts/COMBAT-01.txt",
+      "status": "pending",
+      "depends_on": ["DATA-01", "MAP-01"],
+      "can_run_parallel": false,
+      "preferred_tier": "medium",
+      "review_model": "high",
+      "allowed_paths": [
+        "src/game/bootstrap.js",
+        "src/game/state/reducers.js",
+        "src/game/data/waves.js",
+        "src/game/data/enemies.js",
+        "src/game/data/map01.js",
+        "src/game/systems/waveSystem.js",
+        "src/game/systems/enemySystem.js"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "COMBAT-02",
+      "title": "Implement towers, projectiles, and damage",
+      "prompt_file": ".agent-prompts/COMBAT-02.txt",
+      "status": "pending",
+      "depends_on": ["COMBAT-01"],
+      "can_run_parallel": false,
+      "preferred_tier": "medium",
+      "review_model": "high",
+      "allowed_paths": [
+        "src/game/bootstrap.js",
+        "src/game/data/towers.js",
+        "src/game/state/reducers.js",
+        "src/game/systems/combatSystem.js",
+        "src/game/systems/projectileSystem.js",
+        "src/game/render"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "UI-02",
+      "title": "Implement selection, upgrades, and sell actions",
+      "prompt_file": ".agent-prompts/UI-02.txt",
+      "status": "pending",
+      "depends_on": ["COMBAT-02"],
+      "can_run_parallel": false,
+      "preferred_tier": "medium",
+      "review_model": "high",
+      "allowed_paths": [
+        "src/styles.css",
+        "src/game/data/towers.js",
+        "src/game/state/reducers.js",
+        "src/game/state/selectors.js",
+        "src/game/systems/uiSystem.js",
+        "src/game/ui"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "QA-01",
+      "title": "Restore deterministic test hooks",
+      "prompt_file": ".agent-prompts/QA-01.txt",
+      "status": "pending",
+      "depends_on": ["UI-02"],
+      "can_run_parallel": false,
+      "preferred_tier": "cheap",
+      "review_model": "medium",
+      "allowed_paths": [
+        "src/main.js",
+        "src/game/bootstrap.js",
+        "src/game/state/selectors.js"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    },
+    {
+      "id": "POLISH-01",
+      "title": "Add the final polish pass",
+      "prompt_file": ".agent-prompts/POLISH-01.txt",
+      "status": "pending",
+      "depends_on": ["QA-01"],
+      "can_run_parallel": false,
+      "preferred_tier": "medium",
+      "review_model": "high",
+      "allowed_paths": [
+        "src/styles.css",
+        "src/game/render",
+        "src/game/ui"
+      ],
+      "verification": [
+        "npm run build"
+      ]
+    }
+  ]
+}

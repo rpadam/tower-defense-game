@@ -1,0 +1,16 @@
+{
+  "tiers": {
+    "cheap": {
+      "profile": "cheap",
+      "description": "Use the cheapest reliable model profile for bounded tasks."
+    },
+    "medium": {
+      "profile": "medium",
+      "description": "Default profile for most implementation tasks."
+    },
+    "high": {
+      "profile": "high",
+      "description": "Use only for failed reviews, difficult integration, or broad rewrites."
+    }
+  }
+}
