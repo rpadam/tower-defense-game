@@ -5,12 +5,12 @@ Use these tasks as the first wave of work for Codex agents.
 Rules for all agents:
 
 - Work only inside `/Users/raphaeladam/development/tower-defense-game`
-- Read [`REWRITE_PLAN.md`](/Users/raphaeladam/development/tower-defense-game/REWRITE_PLAN.md) first
-- Read [`progress.md`](/Users/raphaeladam/development/tower-defense-game/progress.md) before editing
+- Read [`REWRITE_PLAN.md`](REWRITE_PLAN.md) first
+- Read [`progress.md`](progress.md) before editing
 - Keep changes scoped to the assigned task
 - Do not rewrite unrelated files
 - Run `npm run build` before finishing
-- Update [`progress.md`](/Users/raphaeladam/development/tower-defense-game/progress.md) with what changed, what still blocks, and what the next agent should know
+- Update [`progress.md`](progress.md) with what changed, what still blocks, and what the next agent should know
 
 ## Task UI-01
 
@@ -20,9 +20,9 @@ Goal: Build a real game shell so the app looks like a game before combat polish 
 
 Files to edit:
 
-- [`index.html`](/Users/raphaeladam/development/tower-defense-game/index.html)
-- [`src/styles.css`](/Users/raphaeladam/development/tower-defense-game/src/styles.css)
-- [`src/main.js`](/Users/raphaeladam/development/tower-defense-game/src/main.js)
+- [`index.html`](index.html)
+- [`src/styles.css`](src/styles.css)
+- [`src/main.js`](src/main.js)
 
 Files allowed to create:
 
@@ -68,7 +68,7 @@ Goal: Replace the current monolithic config with modular game data and state fil
 
 Files to edit:
 
-- [`src/state.js`](/Users/raphaeladam/development/tower-defense-game/src/state.js)
+- [`src/state.js`](src/state.js)
 
 Files allowed to create:
 
@@ -295,7 +295,7 @@ Goal: Restore deterministic automation and test hooks for the rewritten game.
 
 Files likely to edit:
 
-- [`src/main.js`](/Users/raphaeladam/development/tower-defense-game/src/main.js)
+- [`src/main.js`](src/main.js)
 - `src/game/bootstrap.js`
 - `src/game/state/selectors.js`
 

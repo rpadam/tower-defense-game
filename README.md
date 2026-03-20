@@ -3,13 +3,41 @@
 Standalone browser tower defense game for deployment at:
 `https://rpadam.github.io/tower-defense-game/`
 
-## Mechanics in this initial build
+## Current status
 
-- Three tower classes: Bolt, Burst (AoE), Frost (slow)
-- Three enemy classes: Scout, Brute, Tank
+The current implementation is a prototype. The active plan is a structured rewrite toward a polished, production-looking game.
+
+Primary planning docs:
+
+- [REWRITE_PLAN.md](./REWRITE_PLAN.md)
+- [AGENT_TASKS.md](./AGENT_TASKS.md)
+- [AGENT_HANDOFF.md](./AGENT_HANDOFF.md)
+- [progress.md](./progress.md)
+
+Orchestration config:
+
+- `orchestration/tasks.json`
+- `orchestration/model-policy.json`
+- `orchestration/adapters.json` (local adapter definitions)
+
+Local prompt files:
+
+- `.agent-prompts/*.txt` (gitignored)
+
+Execution policy:
+
+- default is sequential (one task at a time)
+- parallel execution requires explicit user consent
+- recommended model tier per task should remain unchanged in sequential and parallel modes
+- each completed task should record model used and token usage fields when available
+
+## Prototype mechanics (legacy baseline)
+
+- Three towers: Bolt, Burst, Frost
+- Three enemy types: Scout, Brute, Tank
 - Path shift every three waves
 - Overdrive meter and timed fire-rate boost
-- Risk crates that can be clicked for economy spikes
+- Risk crate click bonus
 - Frost + Burst synergy bonus
 
 ## Local development

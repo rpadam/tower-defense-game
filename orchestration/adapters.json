@@ -1,0 +1,55 @@
+{
+  "execution_policy": {
+    "default_mode": "sequential",
+    "parallel_requires_explicit_user_consent": true,
+    "keep_task_recommended_model_tier_in_parallel": true
+  },
+  "adapters": [
+    {
+      "name": "codex",
+      "default_profile": "medium",
+      "profiles": {
+        "cheap": {
+          "model": "gpt-5-mini",
+          "command": ["sh", "-lc", "codex exec -C '{project}' --model '{model}' - < '{prompt_file}'"]
+        },
+        "medium": {
+          "model": "gpt-5-codex",
+          "command": ["sh", "-lc", "codex exec -C '{project}' --model '{model}' - < '{prompt_file}'"]
+        },
+        "high": {
+          "model": "gpt-5.4",
+          "command": ["sh", "-lc", "codex exec -C '{project}' --model '{model}' - < '{prompt_file}'"]
+        }
+      }
+    },
+    {
+      "name": "claude-code",
+      "default_profile": "medium",
+      "profiles": {
+        "cheap": {
+          "model": "sonnet",
+          "command": ["claude", "code", "--cwd", "{project}", "--model", "{model}", "--prompt-file", "{prompt_file}"]
+        },
+        "medium": {
+          "model": "sonnet",
+          "command": ["claude", "code", "--cwd", "{project}", "--model", "{model}", "--prompt-file", "{prompt_file}"]
+        },
+        "high": {
+          "model": "opus",
+          "command": ["claude", "code", "--cwd", "{project}", "--model", "{model}", "--prompt-file", "{prompt_file}"]
+        }
+      }
+    },
+    {
+      "name": "cursor",
+      "default_profile": "medium",
+      "profiles": {
+        "medium": {
+          "model": "default",
+          "command": ["cursor-agent", "--project", "{project}", "--model", "{model}", "--prompt-file", "{prompt_file}"]
+        }
+      }
+    }
+  ]
+}

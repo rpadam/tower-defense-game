@@ -3,6 +3,11 @@
     "name": "tower-defense-game",
     "root": "/Users/raphaeladam/development/tower-defense-game"
   },
+  "execution_policy": {
+    "default_mode": "sequential",
+    "parallel_requires_explicit_user_consent": true,
+    "keep_task_recommended_model_tier_in_parallel": true
+  },
   "model_policy_file": "orchestration/model-policy.json",
   "tasks": [
     {
@@ -14,6 +19,25 @@
       "can_run_parallel": true,
       "preferred_tier": "medium",
       "review_model": "high",
+      "token_estimate": {
+        "input_tokens_estimate_min": 8000,
+        "input_tokens_estimate_max": 28000,
+        "output_tokens_estimate_min": 2000,
+        "output_tokens_estimate_max": 10000,
+        "confidence": "medium",
+        "estimation_notes": "UI shell rewrite with multiple files and visual iterations."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "index.html",
         "src/styles.css",
@@ -34,6 +58,25 @@
       "can_run_parallel": true,
       "preferred_tier": "cheap",
       "review_model": "medium",
+      "token_estimate": {
+        "input_tokens_estimate_min": 3000,
+        "input_tokens_estimate_max": 14000,
+        "output_tokens_estimate_min": 1000,
+        "output_tokens_estimate_max": 5000,
+        "confidence": "medium",
+        "estimation_notes": "Data and state modularization with low UI complexity."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/state.js",
         "src/game/constants.js",
@@ -54,6 +97,25 @@
       "can_run_parallel": false,
       "preferred_tier": "medium",
       "review_model": "high",
+      "token_estimate": {
+        "input_tokens_estimate_min": 9000,
+        "input_tokens_estimate_max": 32000,
+        "output_tokens_estimate_min": 2500,
+        "output_tokens_estimate_max": 12000,
+        "confidence": "medium",
+        "estimation_notes": "Map rendering and placement feedback integration."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/game/bootstrap.js",
         "src/game/constants.js",
@@ -74,6 +136,25 @@
       "can_run_parallel": false,
       "preferred_tier": "medium",
       "review_model": "high",
+      "token_estimate": {
+        "input_tokens_estimate_min": 9000,
+        "input_tokens_estimate_max": 36000,
+        "output_tokens_estimate_min": 2500,
+        "output_tokens_estimate_max": 13000,
+        "confidence": "medium",
+        "estimation_notes": "Wave scheduler and enemy movement with state integration."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/game/bootstrap.js",
         "src/game/state/reducers.js",
@@ -96,6 +177,25 @@
       "can_run_parallel": false,
       "preferred_tier": "medium",
       "review_model": "high",
+      "token_estimate": {
+        "input_tokens_estimate_min": 12000,
+        "input_tokens_estimate_max": 50000,
+        "output_tokens_estimate_min": 3000,
+        "output_tokens_estimate_max": 16000,
+        "confidence": "low",
+        "estimation_notes": "Combat and projectile systems can expand with debugging loops."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/game/bootstrap.js",
         "src/game/data/towers.js",
@@ -117,6 +217,25 @@
       "can_run_parallel": false,
       "preferred_tier": "medium",
       "review_model": "high",
+      "token_estimate": {
+        "input_tokens_estimate_min": 9000,
+        "input_tokens_estimate_max": 34000,
+        "output_tokens_estimate_min": 2500,
+        "output_tokens_estimate_max": 12000,
+        "confidence": "medium",
+        "estimation_notes": "Selection and upgrade UI with state mutations."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/styles.css",
         "src/game/data/towers.js",
@@ -138,6 +257,25 @@
       "can_run_parallel": false,
       "preferred_tier": "cheap",
       "review_model": "medium",
+      "token_estimate": {
+        "input_tokens_estimate_min": 3000,
+        "input_tokens_estimate_max": 14000,
+        "output_tokens_estimate_min": 1000,
+        "output_tokens_estimate_max": 5000,
+        "confidence": "medium",
+        "estimation_notes": "Hook verification and concise state payload updates."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/main.js",
         "src/game/bootstrap.js",
@@ -156,6 +294,25 @@
       "can_run_parallel": false,
       "preferred_tier": "medium",
       "review_model": "high",
+      "token_estimate": {
+        "input_tokens_estimate_min": 7000,
+        "input_tokens_estimate_max": 28000,
+        "output_tokens_estimate_min": 2000,
+        "output_tokens_estimate_max": 10000,
+        "confidence": "medium",
+        "estimation_notes": "Polish pass with iterative visual tuning."
+      },
+      "completion_usage": {
+        "model_requested": null,
+        "model_actual": null,
+        "provider": null,
+        "input_tokens_actual": null,
+        "output_tokens_actual": null,
+        "total_tokens_actual": null,
+        "cost_actual_usd": null,
+        "completed_at": null,
+        "usage_notes": null
+      },
       "allowed_paths": [
         "src/styles.css",
         "src/game/render",

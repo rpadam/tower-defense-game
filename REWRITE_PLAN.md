@@ -21,8 +21,8 @@ Current repo state:
 - Single-canvas prototype
 - Very thin HTML shell
 - Minimal CSS
-- All major gameplay logic concentrated in [`src/game.js`](/Users/raphaeladam/development/tower-defense-game/src/game.js)
-- Static config in [`src/state.js`](/Users/raphaeladam/development/tower-defense-game/src/state.js)
+- All major gameplay logic concentrated in [`src/game.js`](src/game.js)
+- Static config in [`src/state.js`](src/state.js)
 
 Current problems:
 
@@ -348,8 +348,8 @@ Outcome:
 
 Tasks:
 
-- Replace [`index.html`](/Users/raphaeladam/development/tower-defense-game/index.html) with a cleaner app shell
-- Rework [`src/styles.css`](/Users/raphaeladam/development/tower-defense-game/src/styles.css) for fantasy strategy UI
+- Replace [`index.html`](index.html) with a cleaner app shell
+- Rework [`src/styles.css`](src/styles.css) for fantasy strategy UI
 - Add title screen overlay
 - Add top HUD bar
 - Add right-side tower panel
@@ -357,8 +357,8 @@ Tasks:
 
 Files:
 
-- [`index.html`](/Users/raphaeladam/development/tower-defense-game/index.html)
-- [`src/styles.css`](/Users/raphaeladam/development/tower-defense-game/src/styles.css)
+- [`index.html`](index.html)
+- [`src/styles.css`](src/styles.css)
 - `src/game/ui/*`
 
 Acceptance:
@@ -375,7 +375,7 @@ Outcome:
 
 Tasks:
 
-- Replace [`src/state.js`](/Users/raphaeladam/development/tower-defense-game/src/state.js) with modular data/state files
+- Replace [`src/state.js`](src/state.js) with modular data/state files
 - Define canonical game state
 - Add selectors for derived data
 - Create tower, enemy, wave, and map data modules
@@ -384,7 +384,7 @@ Files:
 
 - `src/game/state/*`
 - `src/game/data/*`
-- Remove or deprecate [`src/state.js`](/Users/raphaeladam/development/tower-defense-game/src/state.js)
+- Remove or deprecate [`src/state.js`](src/state.js)
 
 Acceptance:
 
@@ -526,7 +526,7 @@ Verification:
 ### Agent Task UI-01
 
 - Goal: Build the new shell layout
-- Files: [`index.html`](/Users/raphaeladam/development/tower-defense-game/index.html), [`src/styles.css`](/Users/raphaeladam/development/tower-defense-game/src/styles.css)
+- Files: [`index.html`](index.html), [`src/styles.css`](src/styles.css)
 - Do:
   - Create title overlay
   - Create HUD regions
@@ -594,7 +594,7 @@ Verification:
 ### Agent Task QA-01
 
 - Goal: Restore deterministic automation flow
-- Files: [`src/main.js`](/Users/raphaeladam/development/tower-defense-game/src/main.js), `src/game/bootstrap.js`, relevant state selectors
+- Files: [`src/main.js`](src/main.js), `src/game/bootstrap.js`, relevant state selectors
 - Do:
   - Ensure `window.advanceTime(ms)` works
   - Ensure `window.render_game_to_text()` returns current game state
